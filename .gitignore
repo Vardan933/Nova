@@ -1,0 +1,11 @@
+# Xcode
+build/
+DerivedData/
+*.xcuserstate
+*.xcuserdatad
+
+# Secrets
+Secrets.plist
+
+# System
+.DS_Store
