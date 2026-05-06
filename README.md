@@ -1,3 +1,9 @@
+![Swift](https://img.shields.io/badge/Swift-6.0-orange?style=flat-square&logo=swift)
+![SwiftUI](https://img.shields.io/badge/SwiftUI-6.0-blue?style=flat-square&logo=swift)
+![Platform](https://img.shields.io/badge/Platform-iOS-blue?style=flat-square&logo=apple)
+![Architecture](https://img.shields.io/badge/Architecture-MVVM--C-green?style=flat-square)
+
+
 # Nova 
 **Nova** is a modern OS application for staying updated with the latest news. Built with a focus on deep engineering principles, clean architecture, and high performance.
 
