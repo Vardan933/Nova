@@ -57,42 +57,6 @@ struct NewsListView: View {
         }
     }
 
-struct NewsRowView: View {
-    let article: Article
-    
-    var body: some View {
-        HStack(spacing: 12) {
-            if let imageURL = article.image_url, let url = URL(string: imageURL) {
-                AsyncImage(url: url) { image in
-                    image.resizable()
-                        .aspectRatio(contentMode: .fill)
-                } placeholder: {
-                    Color.gray.opacity(0.1)
-                }
-                .frame(width: 80, height: 80)
-                .cornerRadius(8)
-                .clipped()
-            } else {
-                Image(systemName: "photo")
-                    .frame(width: 80, height: 80)
-                    .background(Color.gray.opacity(0.1))
-                    .cornerRadius(8)
-            }
-            
-            VStack(alignment: .leading, spacing: 4) {
-                Text(article.title)
-                    .font(.headline)
-                    .lineLimit(2)
-                
-                Text(article.pubDate)
-                    .font(.caption)
-                    .foregroundColor(.secondary)
-            }
-        }
-        .padding(.vertical, 4)
-    }
-}
-
 #Preview {
     NewsListView()
 }

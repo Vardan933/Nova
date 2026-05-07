@@ -12,6 +12,10 @@ struct NewsDetailsView: View {
     // MARK: - Properties
     let article: Article
     @Environment(\.modelContext) private var modelContext
+    @Query var savedArticles: [SavedArticle]
+    private var isSaved: Bool {
+        savedArticles.contains(where: { $0.article_id == article.article_id })
+    }
     
     // MARK: - Body
     var body: some View {
@@ -23,18 +27,13 @@ struct NewsDetailsView: View {
                         AsyncImage(url: url) { phase in
                             switch phase {
                             case .empty:
-                                HStack {
-                                    Spacer()
-                                    ProgressView()
-                                    Spacer()
-                                }
-                                .frame(height: 250)
+                                ProgressView()
+                                    .frame(width: geometry.size.width - 32, height: 250)
                             case .success(let image):
                                 image
                                     .resizable()
                                     .aspectRatio(contentMode: .fill)
-                                    .frame(width: geometry.size.width - 32)
-                                    .frame(height: 250)
+                                    .frame(width: geometry.size.width - 32, height: 250)
                                     .cornerRadius(12)
                                     .clipped()
                             case .failure:
@@ -51,7 +50,6 @@ struct NewsDetailsView: View {
                             .font(.title2)
                             .bold()
                             .multilineTextAlignment(.leading)
-                            .fixedSize(horizontal: false, vertical: true)
                         
                         Text(article.pubDate)
                             .font(.caption)
@@ -65,7 +63,6 @@ struct NewsDetailsView: View {
                             .multilineTextAlignment(.leading)
                     }
                     .padding(.horizontal)
-                    .frame(width: geometry.size.width, alignment: .leading)
                 }
                 .padding(.vertical)
             }
@@ -93,18 +90,44 @@ struct NewsDetailsView: View {
     
     private var navigationToolbarButtons: some View {
         HStack(spacing: 20) {
+           
             Button(action: { shareLink(url: article.link) }) {
                 Image(systemName: "square.and.arrow.up")
             }
             
-            Button(action: { saveArticle() }) {
-                Image(systemName: "bookmark")
+          
+            Button(action: { toggleSave() }) {
+                Image(systemName: isSaved ? "bookmark.fill" : "bookmark")
+                    .foregroundColor(isSaved ? .yellow : .primary)
             }
         }
     }
     
     // MARK: - Methods
-    func shareLink(url: String) {
+    
+    private func toggleSave() {
+        if isSaved {
+          
+            if let articleToDelete = savedArticles.first(where: { $0.article_id == article.article_id }) {
+                modelContext.delete(articleToDelete)
+                print("DEBUG: Article removed")
+            }
+        } else {
+            let newSaved = SavedArticle(
+                article_id: article.article_id,
+                title: article.title,
+                link: article.link,
+                desc: article.description,
+                image_url: article.image_url,
+                pubDate: article.pubDate
+            )
+            modelContext.insert(newSaved)
+            print("DEBUG: Article saved")
+        }
+        
+    }
+    
+    private func shareLink(url: String) {
         guard let url = URL(string: url) else { return }
         let activityVC = UIActivityViewController(activityItems: [url], applicationActivities: nil)
         
@@ -112,19 +135,6 @@ struct NewsDetailsView: View {
            let rootVC = scene.windows.first?.rootViewController {
             rootVC.present(activityVC, animated: true)
         }
-    }
-    
-    func saveArticle() {
-        let newSaved = SavedArticle(
-            article_id: article.article_id,
-            title: article.title,
-            link: article.link,
-            desc: article.description,
-            image_url: article.image_url,
-            pubDate: article.pubDate
-        )
-        modelContext.insert(newSaved)
-        print("News saved to SwiftData!")
     }
 }
 
@@ -135,7 +145,7 @@ struct NewsDetailsView: View {
             article_id: "1",
             title: "Real Madrid wins again!",
             link: "https://realmadrid.com",
-            description: "An amazing match at Bernabeu... The team showed incredible spirit and dominated the field from the first minute.",
+            description: "An amazing match at Bernabeu...",
             image_url: "https://images.unsplash.com/photo-1574629810360-7efbbe195018",
             pubDate: "2026-05-06",
             source_id: "RM",
