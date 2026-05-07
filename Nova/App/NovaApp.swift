@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import SwiftData
 
 @main
 struct NovaApp: App {
@@ -13,5 +14,6 @@ struct NovaApp: App {
         WindowGroup {
             MainTabView()
         }
+        .modelContainer(for: SavedArticle.self)
     }
 }

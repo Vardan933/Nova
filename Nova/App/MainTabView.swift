@@ -9,13 +9,23 @@ import SwiftUI
 
 struct MainTabView: View {
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
-        }
-        .padding()
+        TabView {
+            NewsListView()
+                .tabItem {
+                    Label("News", systemImage: "newspaper")
+                }
+            
+            SavedNewsView()
+                .tabItem {
+                    Label("Saved", systemImage: "bookmark")
+                }
+            
+            SettingsView()
+                .tabItem {
+                    Label("Settings", systemImage: "gearshape")
+             }
+         }
+        .accentColor(.blue)
     }
 }
 
