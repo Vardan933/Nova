@@ -1,8 +1,10 @@
-![Swift](https://img.shields.io/badge/Swift-6.0-orange?style=flat-square&logo=swift)
-![SwiftUI](https://img.shields.io/badge/SwiftUI-6.0-blue?style=flat-square&logo=swift)
-![Platform](https://img.shields.io/badge/Platform-iOS-blue?style=flat-square&logo=apple)
-![Architecture](https://img.shields.io/badge/Architecture-MVVM-green?style=flat-square)
-
+![Swift](https://img.shields.io/badge/Swift-5.9-F54A2A?style=for-the-badge&logo=swift&logoColor=white)
+![SwiftUI](https://img.shields.io/badge/SwiftUI-blue?style=for-the-badge&logo=swift&logoColor=white)
+![iOS](https://img.shields.io/badge/iOS-17%2B-000000?style=for-the-badge&logo=apple&logoColor=white)
+![Architecture](https://img.shields.io/badge/Architecture-MVVM-purple?style=for-the-badge)
+![Async](https://img.shields.io/badge/Async-Await-green?style=for-the-badge)
+![REST](https://img.shields.io/badge/API-REST-orange?style=for-the-badge)
+![License](https://img.shields.io/badge/License-MIT-yellow?style=for-the-badge)
 
 # Nova 
 **Nova** is a modern OS application for staying updated with the latest news. Built with a focus on deep engineering principles, clean architecture, and high performance.
