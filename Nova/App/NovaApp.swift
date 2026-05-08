@@ -10,9 +10,17 @@ import SwiftData
 
 @main
 struct NovaApp: App {
+    
+    @AppStorage("hasSeenOnboarding") var hasSeenOnboarding: Bool = false
+    
     var body: some Scene {
         WindowGroup {
-            MainTabView()
+            
+            if hasSeenOnboarding {
+                MainTabView()
+            } else {
+                OnboardingView()
+            }
         }
         .modelContainer(for: SavedArticle.self)
     }
