@@ -1,6 +1,6 @@
 ![Swift](https://img.shields.io/badge/Swift-6.0-F54A2A?style=for-the-badge&logo=swift&logoColor=white)
 ![SwiftUI](https://img.shields.io/badge/SwiftUI-blue?style=for-the-badge&logo=swift&logoColor=white)
-![iOS](https://img.shields.io/badge/iOS-17%2B-000000?style=for-the-badge&logo=apple&logoColor=white)
+![iOS](https://img.shields.io/badge/iOS-26.4-000000?style=for-the-badge&logo=apple&logoColor=white)
 ![Architecture](https://img.shields.io/badge/Architecture-MVVM-purple?style=for-the-badge)
 ![Async](https://img.shields.io/badge/Async-Await-green?style=for-the-badge)
 ![REST](https://img.shields.io/badge/API-REST-orange?style=for-the-badge)
