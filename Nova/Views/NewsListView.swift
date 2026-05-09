@@ -36,6 +36,9 @@ struct NewsListView: View {
                             NavigationLink(destination: NewsDetailsView(article: article)) {
                                 NewsRowView(article: article)
                             }
+                            .listRowBackground(Color.clear)
+                            .listRowSeparator(.hidden)
+                            .listRowInsets(EdgeInsets())
                         }
                         .listStyle(.plain)
                         .scrollContentBackground(.hidden)

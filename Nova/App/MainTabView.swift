@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct MainTabView: View {
+    @AppStorage("isDarkMode") private var isDarkMode = false
     var body: some View {
         TabView {
             Tab("News", systemImage: "newspaper") {
@@ -24,6 +25,7 @@ struct MainTabView: View {
         }
         .tint(.accentColor)
         .tabBarMinimizeBehavior(.onScrollDown)
+        .preferredColorScheme(isDarkMode ? .dark : .light)
     }
 }
 

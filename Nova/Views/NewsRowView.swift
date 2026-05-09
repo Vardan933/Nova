@@ -35,10 +35,10 @@ struct NewsRowView: View {
             VStack(alignment: .leading, spacing: 6) {
                 Text(article.title)
                     .font(.headline)
-                    .lineLimit(2)
+                    .lineLimit(3)
                     .multilineTextAlignment(.leading)
                 
-                Text(article.pubDate)
+                Text(article.pubDate.formattedDate())
                     .font(.caption)
                     .foregroundColor(.secondary)
             }
@@ -51,11 +51,11 @@ struct NewsRowView: View {
             RoundedRectangle(cornerRadius: 18)
                 .fill(.ultraThinMaterial)
                 .overlay(
-                    RoundedRectangle(cornerRadius: 20)
+                    RoundedRectangle(cornerRadius: 18)
                         .stroke(Color.white.opacity(0.2), lineWidth: 1.5)
                 )
         )
-        .shadow(color: .black.opacity(0.1), radius: 4, x: 0, y: 4)
+        .shadow(color: .black.opacity(0.08), radius: 6, x: 0, y: 3)
         .padding(.horizontal)
         .padding(.vertical, 4)
     }
