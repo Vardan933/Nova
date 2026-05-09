@@ -55,7 +55,6 @@ struct SettingsView: View {
         }
     }
     
-    // Ֆունկցիա՝ Mail App-ը բացելու համար
     func sendEmail() {
         let email = "Vardan.032093@gmail.com"
         let subject = "Feedback on Nova App"

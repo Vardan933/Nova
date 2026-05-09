@@ -10,22 +10,20 @@ import SwiftUI
 struct MainTabView: View {
     var body: some View {
         TabView {
-            NewsListView()
-                .tabItem {
-                    Label("News", systemImage: "newspaper")
-                }
+            Tab("News", systemImage: "newspaper") {
+                NewsListView()
+            }
             
-            SavedNewsView()
-                .tabItem {
-                    Label("Saved", systemImage: "bookmark")
-                }
+            Tab("Saved", systemImage: "bookmark") {
+                SavedNewsView()
+            }
             
-            SettingsView()
-                .tabItem {
-                    Label("Settings", systemImage: "gearshape")
-             }
-         }
-        .accentColor(.blue)
+            Tab("Settings", systemImage: "gearshape") {
+                SettingsView()
+            }
+        }
+        .tint(.accentColor)
+        .tabBarMinimizeBehavior(.onScrollDown)
     }
 }
 

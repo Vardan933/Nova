@@ -38,9 +38,11 @@ struct NewsListView: View {
                             }
                         }
                         .listStyle(.plain)
+                        .scrollContentBackground(.hidden)
                     }
                 }
-                .navigationTitle("Nova News")
+                .background(.clear)
+                .navigationTitle("Nova")
                 .searchable(text: $searchText, prompt: "Search news...")
                 .onChange(of: searchText) { oldValue, newValue in
                     Task {
