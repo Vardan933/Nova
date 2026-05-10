@@ -9,6 +9,13 @@
 # Nova 
 **Nova** is a modern OS application for staying updated with the latest news. Built with a focus on deep engineering principles, clean architecture, and high performance.
 
+## 📱 App Preview (Armenian Version)
+Here is a quick look at Nova's localized interface and core functionality:
+
+<p align="center">
+  <img src="Nova.gif" width="300" alt="Nova App Preview" />
+</p>
+
 ## Tech Stack & Architecture
 - **Language:** Swift 6.0
 - **Framework:** SwiftUI
