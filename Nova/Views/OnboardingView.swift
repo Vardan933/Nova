@@ -28,12 +28,14 @@ struct OnboardingView: View {
                 
                 Button(action: { viewModel.nextStep() }) {
                     Text(viewModel.current == viewModel.pages.count - 1 ? "Get Started" : "Next")
-                        .font(.callout)
+                        .font(.headline)
+                        .fontWeight(.semibold)
+                        .foregroundColor(.white)
                         .frame(maxWidth: .infinity)
                         .padding()
                         .background(.ultraThinMaterial)
                         .clipShape(Capsule())
-                        .overlay(Capsule().stroke(.white.opacity(0.2), lineWidth: 1))
+                        .overlay(Capsule().stroke(.white.opacity(0.3), lineWidth: 1))
                 }
                 .padding(.horizontal, 40)
                 .padding(.bottom, 50)
@@ -50,18 +52,26 @@ struct OnboardingSlide: View {
             LottieView(animation: .named(step.animationName))
                 .looping()
                 .resizable()
+                .aspectRatio(contentMode: .fit)
                 .frame(width: 300, height: 300)
+                .scaleEffect(step.animationName == "news_anim" ? 1.6 : 1.0)
+                    .clipped()
             
             VStack(spacing: 15) {
                 Text(step.title)
                     .font(.largeTitle)
                     .bold()
+                    .multilineTextAlignment(.center)
+                    .minimumScaleFactor(0.8)
+                    .lineLimit(2)
                 
                 Text(step.description)
                     .font(.body)
                     .multilineTextAlignment(.center)
                     .foregroundColor(.secondary)
                     .padding(.horizontal, 40)
+                    .minimumScaleFactor(0.7)
+                    .lineLimit(3)
             }
         }
     }

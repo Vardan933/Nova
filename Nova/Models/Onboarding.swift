@@ -11,7 +11,7 @@ struct Onboarding: Identifiable {
     
     let id = UUID()
     let animationName: String
-    let title: String
-    let description: String
+    let title: LocalizedStringResource
+    let description: LocalizedStringResource
     
 }
