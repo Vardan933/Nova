@@ -7,10 +7,10 @@
 ![License](https://img.shields.io/badge/License-MIT-yellow?style=for-the-badge)
 
 # Nova 
-**Nova** is a modern OS application for staying updated with the latest news. Built with a focus on deep engineering principles, clean architecture, and high performance.
+**Nova** is a high-performance, modern iOS news application designed for a seamless discovery experience. Built with a focus on deep engineering principles, clean architecture, and a premium user interface.
 
 ## 📱 App Preview (Armenian Version)
-Here is a quick look at Nova's localized interface and core functionality:
+The preview above demonstrates the core user flow, including fluid Lottie animations, full Armenian localization, SwiftData-powered saving mechanism for offline reading and dark mode support.
 
 <p align="center">
   <img src="Nova.gif" width="300" alt="Nova App Preview" />
@@ -18,17 +18,17 @@ Here is a quick look at Nova's localized interface and core functionality:
 
 ## Tech Stack & Architecture
 - **Language:** Swift 6.0
-- **Framework:** SwiftUI
+- **UI Framework:** SwiftUI
 - **Architecture:** MVVM
 - **Networking:** Native URLSession with Codable
-- **Local Storage:** SwiftData (Planned)
+- **Local Storage:** SwiftData 
 
 ## Key Features
-- [ ] Real-time news feed using NewsAPI
-- [ ] Category-based filtering
-- [ ] Advanced search functionality
-- [ ] Offline reading with local persistence
-- [ ] Minimalist and responsive UI
+- **News Feed:** Real-time news using NewsAPI 
+- **Advanced Search:** Responsive search functionality
+- **Offline Reading:** Save articles locally to read without internet
+- **Localization:** Native support for Armenian and English languages
+- **Adaptive UI:** Fully optimized for Dark Mode and Light Mode
 
 ## Project Structure
 - `App/`: App Delegate and Root entry point.
