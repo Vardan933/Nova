@@ -19,6 +19,10 @@ struct MainTabView: View {
                 SavedNewsView()
             }
             
+            Tab("Summary", systemImage: "apple.intelligence") {
+                SummaryView()
+            }
+            
             Tab("Settings", systemImage: "gearshape") {
                 SettingsView()
             }
