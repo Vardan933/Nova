@@ -160,7 +160,7 @@
         "hy" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Ժամանակակից\nդիզայն"
+            "value" : "Արդիական\nդիզայն"
           }
         }
       }
@@ -208,7 +208,7 @@
         "hy" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Նովա"
+            "value" : "Nova"
           }
         }
       }
@@ -262,7 +262,7 @@
         "hy" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Պահպանված է"
+            "value" : "Պահպանված "
           }
         }
       }
